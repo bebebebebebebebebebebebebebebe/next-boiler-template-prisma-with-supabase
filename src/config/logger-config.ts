@@ -1,7 +1,12 @@
+import { createDatetime } from '@/utils/datetime-config';
 import pino from 'pino';
-import { createDatetime } from './datetime-config';
 
-export const createLogger = (context = {}) => {
+type LoggerOptions = {
+  where?: string;
+  context?: Record<string, any>;
+};
+
+export const createLogger = ({ where, context = {} }: LoggerOptions = {}) => {
   const logger = pino({
     level: process.env.NODE_ENV === 'production' ? 'info' : 'debug',
     formatters: {
@@ -14,6 +19,7 @@ export const createLogger = (context = {}) => {
   });
 
   return logger.child({
+    where,
     ...context,
   });
 };

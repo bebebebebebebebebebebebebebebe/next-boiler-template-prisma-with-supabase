@@ -1,5 +1,7 @@
 import { RequestOptions } from '@/lib/types/api-client-type';
-import { isServer } from '@/utils/env';
+
+const isClient = (): boolean => typeof window !== 'undefined';
+const isServer = (): boolean => !isClient();
 
 export const getServerCookies = async () => {
   if (typeof window !== 'undefined') return '';

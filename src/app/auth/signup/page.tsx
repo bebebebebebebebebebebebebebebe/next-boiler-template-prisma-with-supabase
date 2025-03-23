@@ -1,10 +1,11 @@
 import SignUpForm from '@/features/auth/components/signup/signup-form';
-import { createLogger } from '@/utils/logger-config';
+import { clientEnv } from '@/config/env';
+import { createLogger } from '@/config/logger-config';
 
+const logger = createLogger({
+  where: 'signup/page.tsx',
+});
 export default function SignUpPage() {
-  const logger = createLogger({
-    service: 'signup page',
-  });
-  logger.info('Hello from SignUpPage!!');
+  logger.info(clientEnv.NEXT_PUBLIC_API_URL);
   return <SignUpForm />;
 }
