@@ -1,7 +1,10 @@
+'use client';
+
 import { AuthProvider } from '@/features/auth/types/auth.type';
 import React from 'react';
 import BaseFormButtonWithIcon, { ProviderStyle } from './BaseFormButtonWithIcon';
 import GoogleButtonIcon from './icons/GoogleButtonIcon';
+import { signIn } from 'next-auth/react';
 
 interface OAuthProviderButtonProps {
   providers: AuthProvider[];
@@ -17,6 +20,7 @@ const OAuthProviderButton: React.FC<OAuthProviderButtonProps> = ({ providers, fo
   const googleLogin = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     console.log('Google Login');
+    signIn('google');
   };
 
   const providerStyles: providerConfigType[] = [
@@ -44,7 +48,7 @@ const OAuthProviderButton: React.FC<OAuthProviderButtonProps> = ({ providers, fo
         provider={providerConfig?.providerStyle || {}}
         className="w-full"
         textContent={`${providerConfig.providerStyle.name}で${formType === 'signup' ? '登録' : 'ログイン'}`}
-        onClick={providerConfig?.authAction}
+        onClick={providerConfig.authAction}
       />
     );
   });
