@@ -13,9 +13,9 @@ export const createLogger = ({ where, context = {} }: LoggerOptions = {}) => {
       level: (label: string) => ({ level: label }),
     },
     timestamp: () => `,"timestamp":"${createDatetime()}"`,
-    base: {
-      pid: process.pid,
-    },
+    // base: {
+    //   pid: process.pid,
+    // },
   });
 
   return logger.child({

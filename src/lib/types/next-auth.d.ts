@@ -12,13 +12,3 @@ declare module 'next-auth' {
     error?: string;
   }
 }
-
-declare module 'next-auth/jwt' {
-  interface JWT {
-    user: AdapterUser;
-    accessToken: string;
-    accessTokenExpires: number;
-    refleshToken?: string;
-    error?: string;
-  }
-}

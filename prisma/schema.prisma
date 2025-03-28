@@ -29,8 +29,6 @@ model User {
   
   // リレーションシップ
   social_accounts   SocialAccount[]
-  sessions          Session[]
-
   @@map("users")
 }
 
@@ -53,16 +51,6 @@ model SocialAccount {
   // ユニーク制約
   @@unique([provider, provider_user_id])
   @@map("social_accounts")
-}
-
-model Session {
-  id           String   @id @default(cuid())
-  sessionToken String   @unique
-  userId       Int
-  expires      DateTime
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@map("sessions")
 }
 
 model VerificationToken {

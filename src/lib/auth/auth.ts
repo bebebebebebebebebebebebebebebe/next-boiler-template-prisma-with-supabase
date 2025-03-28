@@ -15,7 +15,7 @@ const GOOGLE_AUTHORIZATION_URL =
 const nextAuthConfig: NextAuthConfig = {
   adapter: customPrismaAdapter(prisma),
   trustHost: true,
-  secret: process.env.NEXTAUTH_SECRET || 'next-auth-secret',
+  secret: env.AUTH_SECRET,
   providers: [
     GoogleProvider({
       clientId: env.AUTH_GOOGLE_ID,

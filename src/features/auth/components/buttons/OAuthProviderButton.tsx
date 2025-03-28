@@ -20,7 +20,7 @@ const OAuthProviderButton: React.FC<OAuthProviderButtonProps> = ({ providers, fo
   const googleLogin = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     console.log('Google Login');
-    signIn('google');
+    signIn('google', { redirectTo: '/dashboard' });
   };
 
   const providerStyles: providerConfigType[] = [

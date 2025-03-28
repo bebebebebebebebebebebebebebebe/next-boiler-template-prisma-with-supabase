@@ -97,69 +97,6 @@ export const customPrismaAdapter = (prisma: PrismaClient): Adapter => {
       return data;
     },
 
-    createSession: async (data) => {
-      const session = await prisma.session.create({
-        data: {
-          userId: parseInt(data.userId),
-          sessionToken: data.sessionToken,
-          expires: data.expires,
-        },
-      });
-      return {
-        id: session.id,
-        userId: session.userId.toString(),
-        sessionToken: session.sessionToken,
-        expires: session.expires,
-      };
-    },
-
-    getSessionAndUser: async (sessionToken) => {
-      const session = await prisma.session.findUnique({
-        where: { sessionToken },
-        include: { user: true },
-      });
-
-      if (!session) return null;
-
-      const user = session.user;
-      return {
-        session: {
-          id: session.id,
-          userId: session.userId.toString(),
-          sessionToken: session.sessionToken,
-          expires: session.expires,
-        },
-        user: {
-          id: user.id.toString(),
-          email: user.email,
-          emailVerified: user.is_verified ? new Date() : null,
-          name: user.full_name,
-          image: user.profile_image_url,
-        },
-      };
-    },
-
-    updateSession: async (data) => {
-      const session = await prisma.session.update({
-        where: { sessionToken: data.sessionToken },
-        data: {
-          expires: data.expires,
-        },
-      });
-      return {
-        id: session.id,
-        userId: session.userId.toString(),
-        sessionToken: session.sessionToken,
-        expires: session.expires,
-      };
-    },
-
-    deleteSession: async (sessionToken) => {
-      await prisma.session.delete({
-        where: { sessionToken },
-      });
-    },
-
     updateUser: async (data) => {
       const user = await prisma.user.update({
         where: { id: parseInt(data.id as string) },
