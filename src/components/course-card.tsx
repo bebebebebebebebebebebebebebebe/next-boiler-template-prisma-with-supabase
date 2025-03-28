@@ -18,17 +18,19 @@ export function CourseCard({ course, type }: CourseCardProps) {
   const badgeVariants = {
     'in-progress': {
       variant: 'secondary' as const,
-      className: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300',
+      className: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300 border-blue-200 dark:border-blue-800',
       text: `${course.progress}% 完了`,
     },
     completed: {
       variant: 'secondary' as const,
-      className: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300',
+      className:
+        'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 border-green-200 dark:border-green-800',
       text: '完了',
     },
     upcoming: {
       variant: 'secondary' as const,
-      className: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300',
+      className:
+        'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300 border-purple-200 dark:border-purple-800',
       text: '予定',
     },
   };

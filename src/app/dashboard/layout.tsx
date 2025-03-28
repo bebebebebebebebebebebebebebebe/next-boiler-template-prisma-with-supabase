@@ -9,7 +9,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   return (
     <div className="flex min-h-screen flex-col">
       <UserGlobalHeaderNav />
-      {children}
+      <div className="container px-8">{children}</div>
     </div>
   );
 };

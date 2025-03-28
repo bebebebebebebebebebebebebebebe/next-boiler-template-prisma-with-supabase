@@ -105,10 +105,28 @@ export function CourseList({ className }: CourseListProps) {
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="in-progress" onValueChange={setActiveTab} className="space-y-4">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="in-progress">受講中</TabsTrigger>
-            <TabsTrigger value="completed">完了</TabsTrigger>
-            <TabsTrigger value="upcoming">予定</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-3 p-1 bg-muted/30">
+            <TabsTrigger
+              value="in-progress"
+              className="data-[state=active]:bg-blue-100 data-[state=active]:text-blue-800 dark:data-[state=active]:bg-blue-900 dark:data-[state=active]:text-blue-300 relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bottom-auto h-0.5 w-full bg-blue-500 opacity-0 data-[state=active]:opacity-100" />
+              受講中
+            </TabsTrigger>
+            <TabsTrigger
+              value="completed"
+              className="data-[state=active]:bg-green-100 data-[state=active]:text-green-800 dark:data-[state=active]:bg-green-900 dark:data-[state=active]:text-green-300 relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bottom-auto h-0.5 w-full bg-green-500 opacity-0 data-[state=active]:opacity-100" />
+              完了
+            </TabsTrigger>
+            <TabsTrigger
+              value="upcoming"
+              className="data-[state=active]:bg-purple-100 data-[state=active]:text-purple-800 dark:data-[state=active]:bg-purple-900 dark:data-[state=active]:text-purple-300 relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bottom-auto h-0.5 w-full bg-purple-500 opacity-0 data-[state=active]:opacity-100" />
+              予定
+            </TabsTrigger>
           </TabsList>
           <TabsContent value="in-progress" className="space-y-4">
             {inProgressCourses.map((course) => (

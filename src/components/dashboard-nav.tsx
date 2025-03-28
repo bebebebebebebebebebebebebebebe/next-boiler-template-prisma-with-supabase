@@ -73,7 +73,7 @@ export function DashboardNav() {
   ];
 
   return (
-    <ScrollArea className="h-[calc(100vh-4rem)] py-6">
+    <ScrollArea className="h-[calc(100vh-4rem)] py-6 gap-2">
       <div className="px-3 py-2">
         <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">メインメニュー</h2>
         <div className="space-y-1">
@@ -83,7 +83,6 @@ export function DashboardNav() {
               asChild
               variant={pathname === item.href ? 'secondary' : 'ghost'}
               className="w-full justify-start"
-              size="sm"
             >
               <Link href={item.href} className="relative">
                 {item.icon}
