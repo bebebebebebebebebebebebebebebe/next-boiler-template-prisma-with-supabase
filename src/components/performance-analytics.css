@@ -1,0 +1,36 @@
+.interactive-chart .chart-point,
+.interactive-chart .chart-bar,
+.interactive-chart .chart-pie-slice {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.interactive-chart .chart-point:hover {
+  r: 7;
+}
+
+.interactive-chart .chart-bar:hover {
+  opacity: 0.8;
+  stroke: currentColor;
+  stroke-width: 1;
+}
+
+.interactive-chart .chart-pie-slice:hover {
+  opacity: 0.8;
+  transform: translateX(5px) translateY(5px);
+}
+
+.chart-tooltip {
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+/* ダークモード対応 */
+.dark .chart-tooltip rect {
+  fill: hsl(var(--background));
+}
+
+.dark .chart-tooltip text {
+  fill: currentColor;
+}
+

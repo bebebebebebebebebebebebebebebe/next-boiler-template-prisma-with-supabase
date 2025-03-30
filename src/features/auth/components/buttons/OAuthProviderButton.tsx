@@ -19,7 +19,6 @@ type providerConfigType = {
 const OAuthProviderButton: React.FC<OAuthProviderButtonProps> = ({ providers, formType }) => {
   const googleLogin = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    console.log('Google Login');
     signIn('google', { redirectTo: '/dashboard' });
   };
 

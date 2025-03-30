@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
+import { signOut } from 'next-auth/react';
 
 export function UserNav() {
   return (
@@ -48,7 +49,7 @@ export function UserNav() {
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={() => signOut({ redirectTo: '/auth/login' })}>
           <LogOut className="mr-2 h-4 w-4" />
           <span>ログアウト</span>
         </DropdownMenuItem>
