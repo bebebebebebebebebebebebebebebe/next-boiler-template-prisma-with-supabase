@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 export function CtaSection() {
   return (
     <section className="py-16 md:py-24 lg:py-32 bg-primary text-primary-foreground">
-      <div className="container">
+      <div className="container mx-auto">
         <div className="mx-auto max-w-[58rem] text-center">
           <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             今日から新しい学びを始めましょう

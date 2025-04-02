@@ -41,7 +41,7 @@ export function LearningJourney() {
 
   return (
     <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white to-blue-50 dark:from-background dark:to-gray-900 overflow-hidden">
-      <div className="container relative">
+      <div className="container mx-auto relative">
         <div className="mx-auto max-w-[58rem] text-center">
           <div className="mb-4 inline-block rounded-lg bg-blue-100 dark:bg-blue-900 px-3 py-1 text-sm font-medium text-blue-800 dark:text-blue-300">
             学習プロセス
