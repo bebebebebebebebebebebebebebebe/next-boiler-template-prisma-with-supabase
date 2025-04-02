@@ -6,6 +6,7 @@ import { ProgressOverview } from '@/components/progress-overview';
 import { RecentActivity } from '@/components/recent-activity';
 import { UpcomingDeadlines } from '@/components/upcoming-deadlines';
 import { WelcomeMessage } from '@/components/welcome-message';
+import { PerformanceAnalytics } from '@/components/performance-analytics';
 
 export const metadata: Metadata = {
   title: 'Dashboard | E-Learning Platform',
@@ -31,6 +32,7 @@ export default function DashboardPage() {
             <UpcomingDeadlines />
           </div>
         </div>
+        <PerformanceAnalytics />
       </div>
     </DashboardShell>
   );

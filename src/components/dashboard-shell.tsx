@@ -1,10 +1,6 @@
 import type { ReactNode } from 'react';
 import { DashboardNav } from '@/components/dashboard-nav';
-import { UserNav } from '@/components/user-nav';
-import { MobileNav } from '@/components/mobile-nav';
-import { ThemeToggle } from '@/components/theme-toggle';
-// 通知コンポーネントをインポートします
-import { NotificationNav } from '@/components/notification-nav';
+import { PerformanceAnalytics } from '@/components/performance-analytics';
 
 interface DashboardShellProps {
   children: ReactNode;

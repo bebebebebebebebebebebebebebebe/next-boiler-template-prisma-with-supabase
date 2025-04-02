@@ -24,7 +24,7 @@ export function HeroSection() {
               いつでも、どこでも、自分のペースで学べるオンライン学習プラットフォーム。効率的なスキルアップと知識の習得を支援します。
             </p>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Link href="/auth/login" passHref>
+              <Link href="/auth/signup" passHref>
                 <Button size="lg" className="h-12 px-6 font-medium">
                   今すぐ始める
                   <ArrowRight className="ml-2 h-4 w-4" />

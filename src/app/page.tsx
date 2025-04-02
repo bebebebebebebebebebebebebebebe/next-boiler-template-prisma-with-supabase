@@ -34,12 +34,12 @@ export default function HomePage() {
             </Link>
           </nav>
           <div className="flex items-center gap-2">
-            <Link href="/login" passHref>
+            <Link href="/auth/login" passHref>
               <Button variant="ghost" size="sm">
                 ログイン
               </Button>
             </Link>
-            <Link href="/signup" passHref>
+            <Link href="/auth/signup" passHref>
               <Button size="sm">無料で始める</Button>
             </Link>
           </div>
