@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
-import { DashboardNav } from '@/components/dashboard-nav';
-import { PerformanceAnalytics } from '@/components/performance-analytics';
+import { DashboardNav } from './dashboard-nav';
 
 interface DashboardShellProps {
   children: ReactNode;

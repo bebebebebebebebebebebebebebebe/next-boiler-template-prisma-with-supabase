@@ -6,7 +6,7 @@ import { Menu } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import { DashboardNav } from '@/features/dashboard/components/layouts/dashboard-nav';
+import { DashboardNav } from './dashboard-nav';
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
